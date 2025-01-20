@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { bagActions } from "../store/BagSlice";
+import { bagActions } from "../store/bagSlice";
 import { MdOutlineBookmarkRemove } from "react-icons/md";
 
 const BagItem = ({ item }) => {
