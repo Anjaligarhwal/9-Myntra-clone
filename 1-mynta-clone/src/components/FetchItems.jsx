@@ -14,8 +14,15 @@ const FetchItems = () => {
     const signal = controller.signal;
 
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("https://myntra-clone-backened.onrender.com", { signal })
-      .then((res) => res.json())
+
+    fetch('https://myntra-clone-backened.onrender.com/items')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+    
+    // fetch("https://myntra-clone-backened.onrender.com", { signal })
+    //   .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchStatusActions.markFetchDone());
         dispatch(fetchStatusActions.markFetchingFinished());
