@@ -8,9 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  // res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Origin', 'https://myntra-clone-frontened.onrender.com'); // Frontend URL
-
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
@@ -18,7 +16,6 @@ app.use((req, res, next) => {
 
 app.get('/items', async (req, res) => {
   const storedItems = await getStoredItems();
-  // await new Promise((resolve, reject) => setTimeout(() => resolve(), 2000));
   res.json({ items: storedItems });
 });
 
@@ -40,4 +37,8 @@ app.post('/items', async (req, res) => {
   res.status(201).json({ message: 'Stored new item.', item: newItem });
 });
 
-app.listen(https://myntra-clone-backened.onrender.com);
+// Use the port from the environment or default to 8080
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
