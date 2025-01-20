@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { bagActions } from "../store/BagSlice";
+import { bagActions } from "../store/bagSlice";
 import { HiShoppingBag } from "react-icons/hi";
 import { IoBagRemove } from "react-icons/io5";
 
